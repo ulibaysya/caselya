@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package caselya.hub.v1;
+
+option go_package = "github.com/ulibaysya/caselya/api/caselya/hub/v1";
+
+service ContainersService {
+  rpc OpenContainers(OpenContainersRequest) returns (OpenContainersResponse);
+}
+
+message OpenContainersRequest {
+  int64 user_id = 1;
+  int64 container_id = 2;
+  int32 n = 3;
+}
+
+message OpenContainersResponse {
+  repeated OpeningResult opening_results = 1;
+}
+
+message OpeningResult {
+  int64 inventory_item_id = 1;
+  int64 item_id = 2;
+}

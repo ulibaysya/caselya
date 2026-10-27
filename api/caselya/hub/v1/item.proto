@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package caselya.hub.v1;
+
+option go_package = "github.com/ulibaysya/caselya/api/caselya/hub/v1";
+
+service ItemService {
+  rpc CreateItem(CreateItemRequest) returns (CreateItemResponse);
+}
+
+message CreateItemRequest {
+  string name = 1;
+  int64 price = 2;
+  repeated Tag tags = 3;
+}
+
+message CreateItemResponse {
+  int64 id = 1;
+}
+
+message Tag {
+  string key = 1;
+  repeated string values = 2;
+}

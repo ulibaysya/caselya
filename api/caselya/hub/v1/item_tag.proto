@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package caselya.hub.v1;
+
+option go_package = "github.com/ulibaysya/caselya/api/caselya/hub/v1";
+
+service ItemTagService {
+  rpc CreateKey(CreateKeyRequest) returns (CreateKeyResponse);
+}
+
+message CreateKeyRequest {
+  string name = 1;
+  bool public = 2;
+  repeated string values = 3;
+}
+
+message CreateKeyResponse {}
