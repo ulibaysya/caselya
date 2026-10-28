@@ -1,3 +1,0 @@
-- Admin
-- Manager: admin + ability to create and delete admins
-- Owner: admin + manager + ability to grant and take away manager status + ability to transfer owner status to any manager (only one owner at a time)
